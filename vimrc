@@ -134,14 +134,3 @@ augroup autosourcing
 	autocmd!
 	autocmd BufWritePost .vimrc source %
 augroup END
-
-
-" Tips and Notes
-" zz to center the cursor
-" switching between tab using g+t
-" tabedit to open new file in a tab
-" Gsearch
-" Gsearch enter information
-" Select whole response press : type s/Query/New Data hit enter
-" Now enter :Greplace select an option and replacement will took place...
-" Upto Video Lecture 11 Done..
