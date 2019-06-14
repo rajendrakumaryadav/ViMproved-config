@@ -1,4 +1,3 @@
-
 # Partially stolen from https://bitbucket.org/mblum/libgp/src/2537ea7329ef/.ycm_extra_conf.py
 import os
 import ycm_core
@@ -7,20 +6,47 @@ import ycm_core
 # compilation database set (by default, one is not set).
 # CHANGE THIS LIST OF FLAGS. YES, THIS IS THE DROID YOU HAVE BEEN LOOKING FOR.
 flags = [
+#    '-Wall',
+#    '-Wextra',
+#    '-Werror',
+#    '-Wc++98-compat',
+#    '-Wno-long-long',
+#    '-Wno-variadic-macros',
+#   '-fexceptions',
     '-Wall',
     '-Wextra',
     '-Werror',
-    '-Wc++98-compat',
     '-Wno-long-long',
     '-Wno-variadic-macros',
     '-fexceptions',
+    '-DNDEBUG',
+    '-ftrapv',
+    '-finstrument-functions',
+    '-Wfloat-equal',
+    '-Wundef',
+    '-Wshadow',
+    '-Wpointer-arith',
+    '-Wcast-align',
+    '-Wstrict-prototypes',
+    '-Wstrict-overflow=5',
+    '-Wwrite-strings',
+    '-Waggregate-return',
+    '-Wcast-qual',
+    '-Wswitch-default',
+    '-Wswitch-enum',
+    '-Wconversion',
+    '-Wunreachable-code',
+    
+    
+    '-DUSE_CLANG_COMPLETER',
+
     # THIS IS IMPORTANT! Without a "-std=<something>" flag, clang won't know which
     # language to use when compiling headers. So it will guess. Badly. So C++
     # headers will be compiled as C headers. You don't want that so ALWAYS specify
     # a "-std=<something>".
     # For a C project, you would set this to something like 'c99' instead of
     # 'c++11'.
-    '-std=c++11',
+    '-std=c11',
     # ...and the same thing goes for the magic -x option which specifies the
     # language that the files to be compiled are written in. This is mostly
     # relevant for c++ headers.
@@ -28,14 +54,39 @@ flags = [
     '-x', 'c++',
     # This path will only work on OS X, but extra paths that don't exist are not
     # harmful
-    '-isystem', '/System/Library/Frameworks/Python.framework/Headers',
+    '-isystem', '/opt/anaconda3/include',
+    'isystem', '/opt/anaconda3/include',
     '-isystem', '/usr/local/include',
     '-isystem', '/usr/include',
-    '-isystem', '/usr/local/include/eigen3',
+    '-isystem', '/usr/include/x86_64-linux-gnu/',
+    '-isystem', '/usr/include/c++/4.9',
+    '-isystem', '/usr/local/include/eigen3'
     '-I', '/usr/include'
     '-I.'
 ]
+SOURCE_EXTENSIONS = [
+        '.cpp',
+        '.cxx',
+        '.cc',
+        '.c',
+        '.m',
+        '.mm'
+        ]
+SOURCE_DIRECTORIES = [
+        'src',
+        'lib'
+        ]
 
+HEADER_EXTENSIONS = [
+        '.h',
+        '.hxx',
+        '.hpp',
+        '.hh'
+        ]
+
+HEADER_DIRECTORIES = [
+        'include'
+        ]
 # Set this to the absolute path to the folder (NOT the file!) containing the
 # compile_commands.json file to use that instead of 'flags'. See here for
 # more details: http://clang.llvm.org/docs/JSONCompilationDatabase.html
